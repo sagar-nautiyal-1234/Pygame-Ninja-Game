@@ -3,7 +3,7 @@ import random
 import math
 from pygame import mixer
 
-# Pygame initialisation
+# Pygame initialization
 pygame.init()
 
 # For Windows display
@@ -82,8 +82,8 @@ def scoreboard(x, y):
     win.blit(score_display, (x, y))
 
 def gameover():
-    over_text = over_font.render("GAME OVER", True, (0, 0, 0))
-    win.blit(over_text, (200, 250))  # Adjusted position for better centering
+    over_text = over_font.render("GAME OVER", True, (255, 0, 0))
+    win.blit(over_text, (200, 200))  # Adjusted position for better centering
 
 # Main game loop
 running = True
@@ -134,7 +134,6 @@ while running:
             if is_game_over(playerX, playerY, enemyX[i], enemyY[i]):
                 for j in range(enemy_num):
                     enemyY[j] = 2000  # Move enemies off-screen
-                gameover()
                 game_over = True
                 break
 
@@ -165,5 +164,12 @@ while running:
 
         # Displaying the scoreboard
         scoreboard(scoreX, scoreY)
+
+    else:
+        # If game is over, display the GAME OVER text and move enemies off-screen
+        gameover()
+        for j in range(enemy_num):
+            enemyY[j] = 2000  # Ensure enemies are moved off-screen
+            enemy(enemyX[j], enemyY[j], j)
 
     pygame.display.update()
