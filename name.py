@@ -10,17 +10,17 @@ pygame.init()
 win = pygame.display.set_mode((800, 500))
 
 # Background
-bg = pygame.image.load('IMG/Plan B/file.jpg')
+bg = pygame.image.load('IMG/file.jpg')
 mixer.music.load('music/background music.wav')
 mixer.music.play(-1)
 
 # For title and logo
 pygame.display.set_caption("Ninja Wars: The Journey Awaits")
-icon = pygame.image.load('IMG/Plan B/ninja (1).png')
+icon = pygame.image.load('IMG/ninja (1).png')
 pygame.display.set_icon(icon)
 
 # Player
-player_img = pygame.image.load('IMG/Plan B/ninja (1).png')
+player_img = pygame.image.load('IMG/ninja (1).png')
 playerX = 400
 playerY = 350
 px_change = 0
@@ -34,14 +34,14 @@ ey_change = []
 enemy_num = 5
 
 for i in range(enemy_num):
-    enemy_img.append(pygame.image.load('IMG/Plan B/samurai (1).png'))
+    enemy_img.append(pygame.image.load('IMG/samurai (1).png'))
     enemyX.append(random.randint(0, 775))
     enemyY.append(random.randint(50, 150))
     ex_change.append(0.1)
     ey_change.append(35)
 
 # Projectile
-pro_img = pygame.image.load('IMG/Plan B/star (1).png')
+pro_img = pygame.image.load('IMG/star (1).png')
 proX = 0
 proY = 350
 prox_change = 0
